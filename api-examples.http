@@ -1,0 +1,67 @@
+// ---------- JOURNAL ----------
+### Get all journal
+GET {{baseUrl}}/journal
+
+### Get marks by student
+GET {{baseUrl}}/journal/{{studentId}}
+
+//Teacher requests
+
+
+// ---------- STUDENT ----------
+### Create student
+POST {{baseUrl}}/student?authToken={{authToken}}
+Content-Type: application/json
+
+{
+    "firstName": "Student",
+    "lastName": "Studentenko",
+    "group": "KN-312"
+}
+
+### Edit student info
+PUT {{baseUrl}}/student/{{studentId}}?authToken={{authToken}}
+Content-Type: application/json
+
+{
+  "firstName": "Taras",
+  "lastName": "Petrenko",
+  "group": "KN-312"
+}
+
+### Delete student
+DELETE {{baseUrl}}/student/{{studentId}}?authToken={{authToken}}
+
+
+
+
+// ---------- LAB ----------
+### Add lab work
+POST {{baseUrl}}/lab/{{studentId}}?authToken={{authToken}}
+Content-Type: application/json
+
+{
+  "title": "SomeLab2",
+  "mark": 20,
+  "possibleMark": 35,
+  "possibleMarkComment": "if will write tests",
+  "comment": "well done!",
+  "date": 1563452534555
+}
+
+### Edit lab work
+PUT {{baseUrl}}/lab/{{studentId}}/{{labId}}?authToken={{authToken}}
+Content-Type: application/json
+
+{
+  "title": "Labwork",
+  "mark": 30,
+  "possibleMark": 35,
+  "possibleMarkComment": "if will write tests",
+  "comment": "well done!",
+  "date": 1563452534555
+}
+
+### Delete lab work
+DELETE {{baseUrl}}/lab/{{studentId}}/{{labId}}?authToken={{authToken}}
+
